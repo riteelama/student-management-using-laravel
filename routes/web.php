@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/students',[App\Http\Controllers\StudentsController::class,'index'])->name('students.index');
-    Route::get('/students/{student}',[App\Http\Controllers\StudentsController::class,'show'])->name('students.show');
+    // Route::get('/students',[App\Http\Controllers\StudentsController::class,'index'])->name('students.index');
+    // Route::get('/students/{student}',[App\Http\Controllers\StudentsController::class,'show'])->name('students.show');
+    
+    Route::resource('students', App\Http\Controllers\StudentsController::class);
+    // Route::resource('students',StudentsController::class);
 });
