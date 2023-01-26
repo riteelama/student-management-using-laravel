@@ -30,6 +30,7 @@ class StudentsController extends Controller
     public function create()
     {
         //
+        return view('students.create');
     }
 
     /**
@@ -41,6 +42,28 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+        
+        
+        Student::create([
+            'name' => $request-> name,
+            'gender' => $request-> gender,
+            'phone' => $request-> phone,
+            // 'profile_image'=>$request->profile_image,
+            'email' => $request-> email,
+            'nationality' => $request-> nationality,
+            'date_of_birth' => $request-> date_of_birth,
+            'grade_ten' => $request-> grade_ten,
+            'grade_twelve' => $request-> grade_twelve,
+            'grade_bachelor' => $request-> grade_bachelor,
+            'grade_master' => $request-> grade_master,
+            'contact_mode' => $request-> contact_mode,
+        ]);
+        dd($request->all());
+        // return redirect()->route('students.index')->with('status', "Student details added successfully!!");
     }
 
     /**

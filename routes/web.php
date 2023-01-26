@@ -26,5 +26,4 @@ Route::middleware(['auth'])->group(function(){
     // Route::get('/students/{student}',[App\Http\Controllers\StudentsController::class,'show'])->name('students.show');
     
     Route::resource('students', App\Http\Controllers\StudentsController::class);
-    // Route::resource('students',StudentsController::class);
 });
