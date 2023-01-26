@@ -6,7 +6,7 @@
     <a href="{{ route('students.create') }}" class="btn btn-secondary">Add Student</a>
     <div class="row justify-content-center">
 
-        <div class="col-md-9">
+        <div class="col-md-12">
 
             <div class="card">
                 <div class="card-header">Students</div>

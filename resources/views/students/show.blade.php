@@ -17,7 +17,7 @@
                             </tr>
                             <tr>
                                 <th scopr="row">Profile Image</th>
-                                <td><img src="../../../storage/app/public/{{ $student->profile_image}}" alt="profile image of {{ $student->name}}"/></td>
+                                <td><img src="../../../storage/{{$student->profile_image}}" width="100px" height="100px" alt="profile picture of  {{ $student->name }}"/></td>
                             </tr>
                             <tr>
                                 <th scopr="row">Gender</th>
