@@ -46,14 +46,16 @@ class StudentsController extends Controller
             'name' => 'required',
             'email' => 'required',
         ]);
+
+        $image = $request->profile_image->store('students');
         
         
         Student::create([
             'name' => $request-> name,
             'gender' => $request-> gender,
             'phone' => $request-> phone,
-            // 'profile_image'=>$request->profile_image,
-            'email' => $request-> email,
+            'profile_image'=>$image,
+            'email' => $request->email,
             'nationality' => $request-> nationality,
             'date_of_birth' => $request-> date_of_birth,
             'grade_ten' => $request-> grade_ten,
@@ -62,8 +64,9 @@ class StudentsController extends Controller
             'grade_master' => $request-> grade_master,
             'contact_mode' => $request-> contact_mode,
         ]);
-        dd($request->all());
-        // return redirect()->route('students.index')->with('status', "Student details added successfully!!");
+        // dd($request->all());
+        // dd($request->profile_image->store('students'));
+        return redirect()->route('students.index')->with('status', "Student details added successfully!!");
     }
 
     /**

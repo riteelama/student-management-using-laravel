@@ -3,8 +3,11 @@
 <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 @section('content')
 <div class="container">
+    <a href="{{ route('students.create') }}" class="btn btn-secondary">Add Student</a>
     <div class="row justify-content-center">
+
         <div class="col-md-9">
+
             <div class="card">
                 <div class="card-header">Students</div>
                 <div class="card-body">
